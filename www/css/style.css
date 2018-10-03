@@ -184,9 +184,44 @@ body {
   clear: both;
   display: block;
 }
+.mix-flex-cent-betw {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mix-flex-cent {
+  display: flex;
+  align-items: center;
+}
+.mix-just-cont-center {
+  justify-content: center;
+}
+.mix-flex-cent-column {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .content {
   max-width: 934px;
   padding: 30px 50px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.prod-name p {
+  color: #2c303d;
+  font-family: Oswald;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.23px;
+}
+.preview {
+  width: 398px;
+  height: 420px;
+  background-color: #eaf2f4;
+  background-image: url(../img/jacket.png);
 }
 /*!
  * Font Awesome Free 5.3.1 by @fontawesome - https://fontawesome.com
