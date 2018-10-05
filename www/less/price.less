@@ -36,6 +36,7 @@
 	}
 
 	&__assessment{
+		display:flex;
 		&-stars{
 			letter-spacing: -3px;
 			margin-right:20px;
@@ -55,12 +56,37 @@
 			font-weight: 700;
 			line-height: 16px;
 			letter-spacing: 0.45px;
+			&-social{
+				color:@blue;
+				font-size: 20px;
+				.mix-flex-cent-betw;
+				&-icon{
+					position:relative;
+					width: 41px;
+					height: 41px;
+					border: 2px solid @blue;
+					border-radius:50%;
+					margin-right:5px;
+					i{
+						position:absolute;
+						left:50%;
+						top:50%;
+						transform:translate(-50%, -50%);
+						
+					}
+				}
+				.cross-big{
+					font-size: 40px;
+					margin-left:10px;
+				}
+			}
 		}
 	}
 	&__explane{
-		max-width:300px;
+		margin-top:30px;
+		max-width:372px;
 		span{	
-			
+			display:inline-block;
 			color:@text-grey;
 			font-size: 12px;
 			font-weight: 300;
@@ -69,6 +95,8 @@
 		}
 	}
 	&__size{
+		margin-bottom:12px;
+		margin-top:16px;
 		&-text{
 			color:@black;
 			font-size: 14px;
@@ -86,6 +114,10 @@
 			border: 1px solid #cccccc;
 			position:relative;
 			margin-right:13px;
+			transition:0.2s;
+			&:hover{
+				box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);
+			}
 			
 			&__size{
 				position:absolute;
@@ -94,8 +126,112 @@
 				transform:translate(-50%, -50%);
 				font-size: 10px;
 				font-weight: 700;
+				
 			}
 
 		}
 	}
+	&__color{
+		margin-bottom:11px;
+		&-text{
+			color:@black;
+			font-size: 14px;
+			font-weight: 700;
+			line-height: 32.5px;
+			text-transform: uppercase;
+			letter-spacing: 0.7px;
+			margin-right:12px;
+		}
+		.mix-flex-cent;
+		.ring-color-button{
+			width: 44px;
+			height: 44px;
+			border-radius:50%;
+			border: 1px solid #cccccc;
+			margin-right:8px;
+			transition:0.2s;
+			&:hover{
+				box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);
+			}
+		}
+
+		.b-blue{background-color:@b-blue};
+		.b-green{background-color:@b-green};
+		.b-red{background-color:@b-red};
+		.b-purple{background-color:@b-purple};
+	}
+	&__button{
+		width: 214px;
+		height: 44px;
+		background-color: @green;
+		position:relative;
+		border-radius:24px;
+		p{
+			position:absolute;
+			left:50%;
+			top:50%;
+			transform:translate(-50%, -50%);
+			color:@black;
+			font-size: 14px;
+			font-weight: 700;
+			line-height: 30.92px;
+			text-transform: uppercase;
+			letter-spacing: 0.25px;
+		}
+	}
 }
+
+
+
+/* задаем относительное позиционирование контейнеру */
+.block{position:relative;}
+/* Оформление скрытого элемента по умолчанию */ 
+.hidden
+	{
+		display: none;
+		position: absolute;
+		bottom: -250%;
+		left: -100%;
+		background-color: #fff;
+		padding: 20px;		
+		box-shadow: 0 1px 1px rgba(0,0,0,.16);
+		
+	}
+/* Дополнительное оформление скрытого элемента(необязательно) */
+.hover + .hidden:before
+	{
+		content: " ";
+		position: absolute;
+		top: -15%;
+		left: 50%;
+		transform: rotate(180deg);
+		margin-left: -5px;
+		border-width: 5px;
+		border-style: solid;
+		height: 0;
+		width: 0;
+		border: 7px solid transparent;
+		border-right: 7px solid #fff;
+		border-color: #fff transparent transparent transparent;
+		z-index: 2;
+	}
+/* Дополнительное оформление скрытого элемента(необязательно) */
+.hover + .hidden:after
+	{content: " ";
+	position: absolute;
+	top: -15%;
+	left: 50%;
+	transform: rotate(180deg);
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	height: 0;
+	width: 0;
+	border: 7px solid transparent;
+	border-right: 7px solid #fff;
+	border-color: rgba(0,0,0,.16) transparent transparent transparent;
+	z-index: 1;}
+/* Появление скрытого элемента при наведении */
+.hover:hover + .hidden{display: block;}
+// .hidden:hover + .hidden{display: block;}
+.hidden:hover{display: block;}
